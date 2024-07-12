@@ -1,0 +1,6 @@
+.customFont {
+    font-family: 'Indie Flower', cursive;
+    color: #d291bc; /* pinkish violet */
+    font-size: 1rem; /* text-xs in Tailwind CSS is 0.75rem */
+  }
+  

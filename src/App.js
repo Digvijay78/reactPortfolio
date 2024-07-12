@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// App.jsx
+import { useRef } from "react";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Project from "./components/Project";
+import Technologies from "./components/Technologies";
 
-function App() {
+const App = () => {
+  const contactRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
+      <div className="fixed top-0 -z-10 h-full w-full">
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      </div>
+
+      <div className="container mx-auto px-8">
+        <Navbar contactRef={contactRef} />
+        <Hero />
+        <About />
+        <Technologies />
+        <Experience />
+        <Project />
+        <Contact ref={contactRef} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
